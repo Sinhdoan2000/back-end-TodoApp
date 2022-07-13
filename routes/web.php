@@ -16,6 +16,7 @@ use App\Http\Controllers\todoController;
 Route::get('/', function () {
     return view('index');
 });
+
 Route::controller(todoController::class)->group(function(){
     Route::get('/api/todo', 'index');
     Route::get('/create', 'create');

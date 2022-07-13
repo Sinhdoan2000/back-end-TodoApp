@@ -31,7 +31,7 @@ class todoController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){    
-        $data = $request->all();   
+            $data = $request->all();          
        return Todo::create($data);
     }
 
@@ -42,7 +42,8 @@ class todoController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function show($id){
-        $job = Todo::find($id);
+            $job = Todo::find($id);
+
         return view('detail', compact('job'));
     }
 
@@ -53,7 +54,8 @@ class todoController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function edit($id){
-        $job = Todo::findOrFail($id);
+            $job = Todo::findOrFail($id);
+
         return view('edit', compact('job'));
     }
 
@@ -65,7 +67,8 @@ class todoController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id){   
-        $data = $request->all();
+            $data = $request->all();
+        
 		return Todo::Where('id', $id)->update($data);
     }
 
@@ -75,7 +78,8 @@ class todoController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id){        
-        return Todo::findOrFail($id)->delete();
+    public function destroy($id){   
+        
+        return Todo::where('id', $id)->delete();
     }
 }

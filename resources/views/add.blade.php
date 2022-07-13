@@ -48,9 +48,10 @@
 <body>
     <div class="todo">
         <h1>To do - add</h1>  
-        <form method="POST" action="/todo/create">
+        <form method="POST" action="/api/todo">
             @csrf
-            <input type="text" name="job" id="addnew" placeholder="Enter your job"/>
+            <input type="text" name="TITLE" id="addnew" placeholder="Enter your job"/>
+            <input type="hidden" name="STATUS" value="false" placeholder="Enter your job"/>
             <span class="errorMessage">{{ $errors->first('job') }}</span>
             <button type="submit" id="submit">Add new</button>
         </form>

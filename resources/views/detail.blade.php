@@ -12,6 +12,6 @@
         <h2>Title</h2><span>{{ $job->TITLE }}</span>
         <p>Status</p><span>{{ $job->STATUS }}</span>
     </div>
-    <a href="/">Home</a>
+    <a href="/api/todo">Home</a>
 </body>
 </html>

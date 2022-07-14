@@ -31,7 +31,8 @@ class todoController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){    
-            $data = $request->all();          
+            $data = $request->all();    
+            DB::statement("ALTER TABLE job AUTO_INCREMENT =  $request->ID");
        return Todo::create($data);
     }
 
@@ -80,6 +81,6 @@ class todoController extends Controller{
      */
     public function destroy($id){   
         
-        return Todo::where('id', $id)->delete();
+        return Todo::where('ID', $id)->delete();
     }
 }

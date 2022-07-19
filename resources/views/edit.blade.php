@@ -7,7 +7,7 @@
     <title>Form</title>
 </head>
 <body>
-    <form action="/update/{{ $job->ID ?? '' }}" method="post">
+    <form action="/todo/update/{{ $job->ID ?? '' }}" method="post">
         @method('PATCH')
         @csrf
         <input type="text" name="job" value="{{ $job->TITLE ?? '' }}"/>

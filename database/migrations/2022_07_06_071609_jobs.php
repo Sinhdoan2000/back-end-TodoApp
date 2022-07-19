@@ -16,7 +16,7 @@ class Jobs extends Migration
         Schema::create('Todo', function(Blueprint $table){
             $table->increments('ID');
             $table->string('TITLE');
-            $table->string('STATUS');
+            $table->integer('STATUS');
             $table->timestamps();            
         });
     }

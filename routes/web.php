@@ -18,12 +18,14 @@ Route::get('/', function () {
 });
 
 Route::controller(todoController::class)->group(function(){
-    Route::get('/api/todo', 'index');
+  Route::prefix('todo')->group(function(){
+    Route::get('/api', 'index');
     Route::get('/create', 'create');
-    Route::post('/api/todo', 'store');
+    Route::post('/api', 'store');
     Route::DELETE('/delete/{id}','destroy');
     Route::get('/detail/{id}', 'show');
     Route::patch('/update/{id}', 'update');
+  });
 });
 
    

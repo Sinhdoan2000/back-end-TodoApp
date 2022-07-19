@@ -13,7 +13,7 @@ class Jobs extends Migration
      */
     public function up()
     {
-        Schema::create('job', function(Blueprint $table){
+        Schema::create('Todo', function(Blueprint $table){
             $table->increments('ID');
             $table->string('TITLE');
             $table->string('STATUS');

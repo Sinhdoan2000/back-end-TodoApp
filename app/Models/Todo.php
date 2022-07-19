@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Todo extends Model
 {
-    protected $table = 'job';
+    protected $table = 'Todo';
     protected $fillable = ['TITLE', 'STATUS'];
 }

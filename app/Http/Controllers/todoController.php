@@ -70,7 +70,7 @@ class todoController extends Controller{
     public function update(Request $request, $id){   
             $data = $request->all();
         
-		return Todo::Where('id', $id)->update($data);
+		return Todo::where('id', $id)->update($data);
     }
 
     /**
